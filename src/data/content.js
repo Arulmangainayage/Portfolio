@@ -14,9 +14,22 @@ export const profile = {
   // TODO: replace with your profile URLs
   github: "https://github.com",
   linkedin: "https://linkedin.com",
-  // TODO: drop your CV at public/resume.pdf, then set this to "/resume.pdf".
-  // The "Résumé" button only renders when this is a non-empty string.
+  // Optional: set this to an external PDF URL to override the built-in résumé
+  // page. Leave empty to use the styled résumé at #resume.
   resumeUrl: "",
+};
+
+export const resume = {
+  eyebrow: "Résumé / Curriculum Vitae",
+  summary:
+    "AI & Data Engineer with 2+ years of experience designing agentic AI systems, LLM-powered applications, RAG pipelines, and scalable enterprise data platforms. Adept at translating complex business requirements into production-grade solutions using Python, AWS, and modern data tooling.",
+  focus: [
+    "Agentic AI",
+    "Generative AI",
+    "RAG Pipelines",
+    "Computer Vision",
+    "Data Engineering",
+  ],
 };
 
 export const nav = [

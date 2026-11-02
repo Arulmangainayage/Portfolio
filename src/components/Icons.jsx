@@ -29,6 +29,25 @@ export function ArrowDown(props) {
   );
 }
 
+export function ArrowLeft(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M19 12H5" />
+      <path d="m11 18-6-6 6-6" />
+    </svg>
+  );
+}
+
+export function Printer(props) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M6 9V3h12v6" />
+      <rect x="3" y="9" width="18" height="8" rx="2" />
+      <path d="M6 17h12v4H6z" />
+    </svg>
+  );
+}
+
 export function Menu(props) {
   return (
     <svg {...base} {...props}>

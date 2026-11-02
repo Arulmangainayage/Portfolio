@@ -121,6 +121,16 @@ export default function Navbar() {
             </div>
 
             <a
+              href={profile.resumeUrl || "#resume"}
+              target={profile.resumeUrl ? "_blank" : undefined}
+              rel={profile.resumeUrl ? "noopener noreferrer" : undefined}
+              className="hidden items-center gap-1.5 rounded-full border border-outline-variant/70 bg-surface-container-lowest px-3.5 py-2 font-label-md text-label-md text-on-surface transition-all duration-200 hover:border-primary/40 hover:text-primary active:scale-[0.98] lg:inline-flex"
+            >
+              Résumé
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+
+            <a
               href="#contact"
               onClick={() => setOpen(false)}
               className="group inline-flex items-center gap-1.5 rounded-full bg-primary-container px-3.5 py-2 font-label-md text-label-md text-on-primary transition-all duration-200 hover:bg-primary hover:ring-1 hover:ring-secondary active:scale-[0.98] sm:px-4"
@@ -168,6 +178,17 @@ export default function Navbar() {
               );
             })}
           </nav>
+
+          <a
+            href={profile.resumeUrl || "#resume"}
+            target={profile.resumeUrl ? "_blank" : undefined}
+            rel={profile.resumeUrl ? "noopener noreferrer" : undefined}
+            onClick={() => setOpen(false)}
+            className="mt-3 flex items-center justify-between rounded-lg border border-outline-variant/70 bg-surface-container px-3.5 py-3 font-label-md text-label-md text-on-surface transition-colors hover:bg-surface-container-high hover:text-primary"
+          >
+            View Résumé
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
 
           <div className="mt-4 flex flex-col gap-3 border-t border-outline-variant/60 pt-4">
             <a

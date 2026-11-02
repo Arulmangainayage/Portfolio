@@ -65,6 +65,14 @@ export default function Footer() {
             </a>
           ))}
           <a
+            href={profile.resumeUrl || "#resume"}
+            target={profile.resumeUrl ? "_blank" : undefined}
+            rel={profile.resumeUrl ? "noopener noreferrer" : undefined}
+            className="font-label-sm text-label-sm text-inverse-primary transition-colors hover:text-inverse-on-surface"
+          >
+            Résumé
+          </a>
+          <a
             href="#home"
             className="inline-flex items-center gap-1 font-label-sm text-label-sm text-inverse-primary transition-colors hover:underline hover:underline-offset-4"
           >

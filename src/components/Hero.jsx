@@ -78,17 +78,15 @@ export default function Hero() {
                 About Me
                 <ArrowDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
               </a>
-              {profile.resumeUrl && (
-                <a
-                  href={profile.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-2 rounded-lg px-2 py-3.5 font-label-md text-label-md text-on-surface underline decoration-secondary/60 decoration-1 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary hover:decoration-2"
-                >
-                  Résumé
-                  <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              )}
+              <a
+                href={profile.resumeUrl || "#resume"}
+                target={profile.resumeUrl ? "_blank" : undefined}
+                rel={profile.resumeUrl ? "noopener noreferrer" : undefined}
+                className="group inline-flex items-center justify-center gap-2 rounded-lg px-2 py-3.5 font-label-md text-label-md text-on-surface underline decoration-secondary/60 decoration-1 underline-offset-4 transition-colors hover:text-primary hover:decoration-primary hover:decoration-2"
+              >
+                View Résumé
+                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </Reveal>
 
             <Reveal
@@ -114,13 +112,13 @@ export default function Hero() {
             delay={120}
             className="relative mx-auto flex w-full max-w-md justify-center lg:col-span-5"
           >
-            <div className="relative aspect-[4/5] w-full rounded-xl border border-outline-variant/80 bg-surface-container p-3 shadow-sm">
+            <div className="relative aspect-[19/20] w-full rounded-xl border border-outline-variant/80 bg-surface-container p-3 shadow-sm">
               <div className="relative h-full w-full overflow-hidden rounded-lg border border-outline-variant/40 bg-surface-container-high">
                 <img
-                  src="/portrait.jpg"
+                  src="/portrait.png"
                   alt="Editorial portrait of Arul Mangai Nayage"
-                  width="1122"
-                  height="1402"
+                  width="370"
+                  height="391"
                   loading="eager"
                   fetchPriority="high"
                   className="h-full w-full object-cover"

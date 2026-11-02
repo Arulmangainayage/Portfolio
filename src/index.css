@@ -151,3 +151,21 @@
     transform: none;
   }
 }
+
+/* Résumé view — keep the printed copy clean and paper-sized */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+  }
+
+  .resume-sheet {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

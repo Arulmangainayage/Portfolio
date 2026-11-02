@@ -20,6 +20,7 @@ The design follows the `UI/DESIGN.md` system (warm ivory canvas, deep olive acti
   - Spam honeypot, sending state, success and error states
 - Copy-email button
 - Live Bengaluru (IST) clock in the footer
+- Styled résumé view at `#resume` with a print / Save as PDF action and a print-friendly layout
 - Semantic HTML, skip link, focus-visible styles, labelled form fields
 - SEO metadata, Open Graph / Twitter cards, JSON-LD `Person` schema, favicon
 - Netlify build config with cache and security headers
@@ -49,8 +50,8 @@ The dev server runs at http://localhost:5173.
 
 1. **Social links** — in `src/data/content.js`, replace `profile.github` and `profile.linkedin` with your real URLs.
 2. **Domain** — in `index.html`, replace every `https://example.com` (canonical, `og:url`, `og:image`, `twitter:image`) with your deployed domain.
-3. **Portrait** — replace `public/portrait.jpg` with your own image (same filename, roughly 4:5 portrait).
-4. **Résumé (optional)** — put your CV at `public/resume.pdf`, then set `profile.resumeUrl = "/resume.pdf"` in `src/data/content.js`. A "Résumé" button appears automatically when the value is non-empty.
+3. **Portrait** — replace `public/portrait.png` with your own image (same filename, roughly square portrait).
+4. **Résumé** — the built-in résumé lives at `#resume` and is assembled from the same content in `src/data/content.js`. To use an external PDF instead, put your CV at `public/resume.pdf` and set `profile.resumeUrl = "/resume.pdf"`; every résumé link will point there.
 5. **Contact form** — see below. It works without setup via `mailto:`, but Formspree gives real inbox delivery.
 
 ---
@@ -114,7 +115,7 @@ Other common edits:
 | Page title / meta / OG tags | `index.html` |
 | Colors, fonts, spacing, radii | `tailwind.config.js` |
 | Global CSS, reveals, marquee, skip link | `src/index.css` |
-| Portrait | `public/portrait.jpg` |
+| Portrait | `public/portrait.png` |
 | Favicon | `public/favicon.svg` |
 | Netlify headers / caching | `netlify.toml` |
 
@@ -126,7 +127,7 @@ Other common edits:
 .
 ├── public/
 │   ├── favicon.svg
-│   └── portrait.jpg
+│   └── portrait.png
 ├── src/
 │   ├── components/
 │   │   ├── About.jsx           # About + system schematic
@@ -143,6 +144,7 @@ Other common edits:
 │   │   ├── Projects.jsx
 │   │   ├── Recognition.jsx
 │   │   ├── Reveal.jsx          # IntersectionObserver wrapper
+│   │   ├── Resume.jsx          # Print-ready résumé view at #resume
 │   │   ├── ScrollProgress.jsx
 │   │   ├── SectionHeading.jsx
 │   │   └── Skills.jsx
